@@ -1,11 +1,13 @@
 package com.dobias1;
 
 public interface FootballWorldCupScoreBoard {
-    boolean startGame(Game game);
+    boolean startMatch(Match match);
 
-    boolean finishGame(Game game);
+    boolean finishMatch(Match match);
 
-    boolean updateScore(Game game, int newHomeTeamScore, int newAwayTeamScore);
+    boolean updateScore(Match match, int newHomeTeamScore, int newAwayTeamScore);
 
     String getSummary();
+
+    Match getMatch(int index);
 }
