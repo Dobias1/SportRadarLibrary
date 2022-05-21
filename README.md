@@ -1,5 +1,7 @@
 # SportRadarLibrary
 
+[![Java CI with Maven](https://github.com/Dobias1/SportRadarLibrary/actions/workflows/maven.yml/badge.svg)](https://github.com/Dobias1/SportRadarLibrary/actions/workflows/maven.yml)
+
 SportRadarLibrary is a Java library for storing and displaying scores of running games. Details are provided in [Coding Exercise v1.5.pdf]([https://](https://github.com/Dobias1/SportRadarLibrary/Coding%20Exercise%20v1.5.pdf))
 
 ## Installation
