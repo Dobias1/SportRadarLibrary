@@ -29,7 +29,8 @@ public class FootballWorldCupScoreBoardImpl implements FootballWorldCupScoreBoar
         Match editMatch = matches.remove(index);
         editMatch.setHomeTeamScore(newHomeTeamScore);
         editMatch.setAwayTeamScore(newAwayTeamScore);
-        return matches.add(editMatch);
+        matches.add(index, editMatch);
+        return matches.contains(editMatch);
     }
 
     @Override
