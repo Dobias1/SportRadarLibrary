@@ -14,7 +14,15 @@ mvn source:jar install --file pom.xml
 ```
 
 ## Usage
-
+Maven dependency
+```xml
+<dependency>
+  <groupId>com.dobias1</groupId>
+  <artifactId>SportRadarLibrary</artifactId>
+  <version>1.0</version>
+</dependency>
+```
+Example code
 ```java
 package org.example;
 
