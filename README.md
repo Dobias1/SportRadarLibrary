@@ -10,29 +10,46 @@ in [Coding Exercise v1.5.pdf]([https://](https://github.com/Dobias1/SportRadarLi
 Use the build tool [Maven](https://maven.apache.org/) to install SportRadarLibrary.
 
 ```bash
-mvn install -f pom.xml
+mvn source:jar install --file pom.xml
 ```
 
 ## Usage
 
 ```java
-import com.dobias1.SportRadarLibrary;
+package org.example;
 
-public class BoardCaller {
-    FootballWorldCupScoreBoard board = FootballWorldCupScoreBoardFactory.createFootballWorldCupScoreBoard();
+import com.dobias1.FootballWorldCupScoreBoard;
+import com.dobias1.FootballWorldCupScoreBoardFactory;
+import com.dobias1.Match;
+
+public class App {
+    static FootballWorldCupScoreBoard board = FootballWorldCupScoreBoardFactory.createFootballWorldCupScoreBoard();
 
     public static void main(String[] args) {
-        // starts new match
-        board.startMatch(new Match("TeamA", "TeamB"));
+
+        // starts new matches
+        Match firstMatch = new Match("TeamA", "TeamB");
+        Match secondMatch = new Match("TeamC", "TeamD");
+        board.startMatch(firstMatch);
+        board.startMatch(secondMatch);
+        // 1. TeamA 0 - TeamB 0
+        // 2. TeamC 0 - TeamD 0
+        System.out.println(board.getSummary());
 
         // changes scores
-        board.updateScore(board.getMatche(0), 1, 0);
+        board.updateScore(0, 5, 10);
+        board.updateScore(1, 5, 15);
+        // Summary order is by sum of scores
+        // 1. TeamC 5 - TeamD 15
+        // 2. TeamA 5 - TeamB 10
+        System.out.println(board.getSummary());
 
         // finishes the 1. match
-        board.finishMatch(0);
+        board.finishMatch(firstMatch);
 
-        // shows summary of all games
-        board.getSummary();
+        // shows summary of all remaining games
+        // 1. TeamC 5 - TeamD 15
+        System.out.println(board.getSummary());
     }
 }
 ```
