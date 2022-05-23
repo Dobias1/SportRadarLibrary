@@ -5,9 +5,13 @@ public interface FootballWorldCupScoreBoard {
 
     boolean finishMatch(Match match);
 
-    boolean updateScore(Match match, int newHomeTeamScore, int newAwayTeamScore);
+    boolean updateScore(int index, int newHomeTeamScore, int newAwayTeamScore);
 
     String getSummary();
 
     Match getMatch(int index);
+
+    boolean isBoardEmpty();
+
+    int sizeOfBoard();
 }
